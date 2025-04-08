@@ -363,7 +363,8 @@ header nav .navbar li a {
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .award img {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: auto;
 }
 .award.active {
