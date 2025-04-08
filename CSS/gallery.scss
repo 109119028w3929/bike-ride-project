@@ -434,27 +434,28 @@ header {
     }
 }
 
-    .upload-section {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-  
-      input, button {
-        padding: 10px;
-        border-radius: 5px;
-        border: 2px solid $primary-color;
-      }
-  
-      button {
-        background-color: $primary-color;
-        color: white;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: darken($primary-color, 10%);
+        .upload-section {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;//added wrap to make it responsive in my phone
+        justify-content: center;
+        gap: 10px;
+    
+        input, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid $primary-color;
         }
-      }
+    
+        button {
+            background-color: $primary-color;
+            color: white;
+            cursor: pointer;
+    
+            &:hover {
+            background-color: darken($primary-color, 10%);
+            }
+        }
     }
 
     //video part 
