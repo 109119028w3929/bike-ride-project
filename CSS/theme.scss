@@ -88,3 +88,16 @@ html, body {
   overflow-x: hidden;//here the about us horizon scroll fixed
 }
 
+// section.gallery-section {
+//   padding: 40px;
+//   background-color: black;
+// }
+.gallery-section {
+  padding: 40px;
+  background-color: white; // default light mode
+
+  // Dark Mode override
+  body.dark-mode & {
+    background-color: #1e1e1e;//gallery part
+  }
+}
