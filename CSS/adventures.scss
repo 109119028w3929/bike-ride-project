@@ -373,26 +373,51 @@ header {
     }
   }
 
-// Adventure Filters
+// // Adventure Filters
+// .adventure-filters {
+//     @include flex-center();
+//     margin: 20px 0;
+
+//     .filter-btn {
+//         padding: 10px 20px;
+//         margin: 5px;
+//         border: 2px solid $primary-color;
+//         background: transparent;
+//         cursor: pointer;
+//         @include transition(all $transition-time);
+
+//         &.active,
+//         &:hover {
+//             background-color: $primary-color;
+//             color: white;
+//         }
+//     }
+// }
 .adventure-filters {
     @include flex-center();
+    flex-wrap: wrap; // allow filters to wrap on smaller screens
+    gap: 10px;      
     margin: 20px 0;
-
+    padding: 0 1rem;
+  
     .filter-btn {
-        padding: 10px 20px;
-        margin: 5px;
-        border: 2px solid $primary-color;
-        background: transparent;
-        cursor: pointer;
-        @include transition(all $transition-time);
-
-        &.active,
-        &:hover {
-            background-color: $primary-color;
-            color: white;
-        }
+      padding: 10px 16px;
+      min-width: 120px; 
+      border: 2px solid $primary-color;
+      background: transparent;
+      cursor: pointer;
+      text-align: center;
+      font-size: 1rem;
+      @include transition(all $transition-time);
+  
+      &.active,
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
     }
-}
+  }
+  
 
 // Search Bar
 .search-container {

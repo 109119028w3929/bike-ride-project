@@ -214,6 +214,7 @@ map.addEventListener("click", function (e) {
     waypoints.push({ x: Math.round(svgP.x), y: Math.round(svgP.y) });
     renderWaypoints();
   });
+
   
 
 // Clear route

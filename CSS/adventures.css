@@ -296,14 +296,19 @@ header nav .navbar li a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin: 20px 0;
+  padding: 0 1rem;
 }
 .adventure-filters .filter-btn {
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 10px 16px;
+  min-width: 120px;
   border: 2px solid #ff5733;
   background: transparent;
   cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
   transition: all 0.3s;
 }
 .adventure-filters .filter-btn.active, .adventure-filters .filter-btn:hover {

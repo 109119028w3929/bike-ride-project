@@ -100,4 +100,10 @@ html, body {
 }
 body.dark-mode .gallery-section {
   background-color: #1e1e1e;
+}
+
+footer .copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #d4411e;
 }/*# sourceMappingURL=theme.css.map */
