@@ -209,7 +209,7 @@ map.addEventListener("click", function (e) {
     pt.x = e.clientX;
     pt.y = e.clientY;
   
-    const svgP = pt.matrixTransform(map.getScreenCTM().inverse());
+    const svgP = pt.matrixTransform(map.getScreenCTM().inverse());//translates the screen coordinate into the correct SVG internal coordinate space
   
     waypoints.push({ x: Math.round(svgP.x), y: Math.round(svgP.y) });
     renderWaypoints();

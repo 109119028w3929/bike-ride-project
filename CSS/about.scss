@@ -390,7 +390,8 @@ header {
 }
 
 
-//Gearshowcase carousel
+//Gearshowcase carousel 
+
 // Carousel Container
 .gear-showcase h2{
     font-size: 2.5rem;
@@ -419,8 +420,8 @@ header {
 
 // Carousel Images
 .carousel-track img {
-    width: 700px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     border-radius: 10px;
     flex-shrink: 0;
@@ -529,7 +530,7 @@ header {
 
 /*  MEDIA QUERIES FOR RESPONSIVENESS */
 
-/* 🔹 Tablet (768px - 1024px) */
+/*  Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
     .about-intro {
         grid-template-columns: 1fr;  /* Stack text + image */

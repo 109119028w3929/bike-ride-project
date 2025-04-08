@@ -88,4 +88,8 @@ body.dark-mode {
   --text-color: #ff5733 !important;
   --header-bg: #2b2b2b;
   --footer-bg: #2b2b2b;
+}
+
+html, body {
+  overflow-x: hidden;
 }/*# sourceMappingURL=theme.css.map */

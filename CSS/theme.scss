@@ -83,3 +83,8 @@ footer .copyright {
     --header-bg: #2b2b2b;
     --footer-bg: #2b2b2b;
 }
+
+html, body {
+  overflow-x: hidden;//here the about us horizon scroll fixed
+}
+
