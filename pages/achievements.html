@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/CSS/achievements.css">
+    <link rel="stylesheet" href="/CSS/theme.css">
+    <script src="/JS/theme.js"></script>
+</head>
+<body>
+     <!-- Header Section -->
+    <header>
+        <div class="logo">
+          <h1>Biking Adventures</h1>
+        </div>
+        <div class="search">
+        <!-- <div class="search">
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Destinations..."
+            autocomplete="off"
+          />
+          <div id="autocomplete-list"></div>
+          <button id="search-btn">Search</button>
+        </div> -->
+      </div>
+        <i class="fa-solid fa-bars menu-icon" id="menu-toggle"></i>
+        <nav>
+          <ul class="navbar">
+            <li class="dropdown">
+              Adventures
+              <ul class="dropdown-menu">
+                <li><a href="/pages/adventures.html">Featured Adventures</a></li>
+                <li><a href="#past-adventures">Past Adventures</a></li>
+              </ul>
+              </li>
+              <li class="dropdown1">
+                Achievements
+                <ul class="dropdown-menu1">
+                  <li><a href="/pages/achievements.html">Awards</a></li>
+                  <li><a href="#milestones">Milestones</a></li>
+                </ul>
+              </li>
+              <li class="dropdown2">
+                Gallery
+                <ul class="dropdown-menu2">
+                  <li><a href="/pages/gallery.html">Photo Gallery</a></li>
+                  <li><a href="#videos">Videos</a></li>
+                </ul>
+              </li>
+           
+              <li><a href="pages/about.html">About Us</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <!-- Milestones Timeline -->
+    <section class="timeline">
+        <div class="timeline-item timeline-left">
+            <div class="timeline-content">
+                <h3>2023 - Longest Ride</h3>
+                <p>Completed a 500km ride in 24 hours.</p>
+            </div>
+        </div>
+        <div class="timeline-item timeline-right">
+            <div class="timeline-content">
+                <h3>2024 - Mountain Challenge</h3>
+                <p>First high-altitude ride reaching 4500m elevation.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Awards & Certifications -->
+    <section class="awards-container">
+        <div class="award">
+            <img src="/assets/images/best rider award.jpg" alt="Award 1">
+            <p>Best Long-Distance Rider 2023</p>
+        </div>
+        <div class="award">
+            <img src="/assets/images/best rider award.jpg" alt="Award 2">
+            <p>Mountain Climbing Champion</p>
+        </div>
+    </section>
+
+    <!-- Progress Charts -->
+    <section class="progress-container">
+        <div class="progress-item">
+            <p>Longest Ride (500km)</p>
+            <div class="progress-bar"><div class="progress-bar-fill" data-progress="90"></div></div>
+        </div>
+        <div class="progress-item">
+            <p>Fastest Speed (120km/h)</p>
+            <div class="progress-bar"><div class="progress-bar-fill" data-progress="80"></div></div>
+        </div>
+    </section>
+
+    <!-- Personal Bests -->
+    <section class="stats-container">
+        <div class="stat-card">
+            <h3>Longest Ride</h3>
+            <p class="stat-number" id="longestRide">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Fastest Speed</h3>
+            <p class="stat-number" id="fastestSpeed">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Highest Elevation</h3>
+            <p class="stat-number" id="highestElevation">0</p>
+        </div>
+    </section>
+
+    <!-- Bike quiz -->
+
+    <section id="bike-quiz">
+        <h2> Bike Quiz: What Type of Rider Are You?</h2>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="hidden"></div>
+      </section>
+      
+
+     <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Subscribe to newsletter">
+            <button type="submit">Subscribe</button>
+        </form>
+        <p class="copyright">&copy; 2025 Biking Adventures | All Rights Reserved</p>
+    </div>
+    <div class="theme-toggle">
+        <label for="darkModeToggle">🌙</label>
+        <input type="checkbox" id="darkModeToggle">
+      </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+
+
+    <script src="/JS/achievements.js" defer></script>
+
+    
+</body>
+</html>

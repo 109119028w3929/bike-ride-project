@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Biking Adventures</title>
+  <link rel="stylesheet" href="../CSS/contact.css" />
+  <link rel="stylesheet" href="../CSS/theme.css" />
+  <script src="/JS/theme.js"></script>
+</head>
+<body>
+ <!-- Header Section -->
+ <!-- Header Section -->
+ <header>
+  <div class="logo">
+    <h1>Biking Adventures</h1>
+  </div>
+  <!-- <div class="search">
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="Search Destinations..."
+      autocomplete="off"
+    />
+    <div id="autocomplete-list"></div>
+    <button id="search-btn">Search</button>
+  </div> -->
+  <i class="fa-solid fa-bars menu-icon" id="menu-toggle"></i>
+  <nav>
+    <ul class="navbar">
+      <li class="dropdown">
+        Adventures
+        <ul class="dropdown-menu">
+          <li><a href="/pages/adventures.html">Featured Adventures</a></li>
+          <li><a href="#past-adventures">Past Adventures</a></li>
+        </ul>
+        <li class="dropdown1">
+          Achievements
+          <ul class="dropdown-menu1">
+            <li><a href="/pages/achievements.html">Awards</a></li>
+            <li><a href="#milestones">Milestones</a></li>
+          </ul>
+        </li>
+        <li class="dropdown2">
+          Gallery
+          <ul class="dropdown-menu2">
+            <li><a href="/pages/gallery.html">Photo Gallery</a></li>
+            <li><a href="#videos">Videos</a></li>
+          </ul>
+        </li>
+     
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  <main class="contact-container"></main>
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <h2>Get in Touch</h2>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="text" id="subject" placeholder="Subject" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="form-response"></p>
+      </form>
+    </section>
+
+    <!-- Live Chat -->
+    <section class="chat-support">
+      <h2>Live Chat Support</h2>
+      <div class="chat-box" id="chat-box">
+        <div class="bot-msg">Hi there! How can I help you?</div>
+        
+      </div>
+      <input type="text" id="chat-input" placeholder="Type your message..." />
+    </section>
+
+    <!-- Location Map -->
+    <h2 class="location">Our Locations</h2>
+
+  <div id="map-container">
+    <!-- Static map image -->
+    <img id="map" src="/assets/images/map.jpg" alt="Map">
+
+    <!-- Markers with data-location-id -->
+    <div class="marker" style="top: 35%; left: 55%;" data-location-id="1"></div>
+    <div class="marker" style="top: 60%; left: 40%;" data-location-id="2"></div>
+    <div class="marker" style="top: 45%; left: 70%;" data-location-id="3"></div>
+  </div>
+
+  <!-- Location details output -->
+  <div id="location-details">Click a marker to see details.</div>
+
+  
+  </main>
+  
+     <!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+      <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <form class="newsletter-form">
+          <input type="email" placeholder="Subscribe to newsletter">
+          <button type="submit">Subscribe</button>
+      </form>
+      <p class="copyright">&copy; 2025 Biking Adventures | All Rights Reserved</p>
+  </div>
+  <div class="theme-toggle">
+    <label for="darkModeToggle">🌙</label>
+    <input type="checkbox" id="darkModeToggle">
+  </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+
+
+  
+
+  <script src="../JS/contact.js"></script>
+</body>
+</html>

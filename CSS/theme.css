@@ -1,0 +1,91 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f5f5f5;
+  --footer-bg: #e5e5e5;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: black !important;
+  --header-bg: #2b2b2b;
+  --footer-bg: #2b2b2b;
+}
+
+/* Apply the variables globally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+header, footer {
+  background-color: var(--header-bg);
+  transition: background-color 0.4s;
+}
+
+header nav .navbar li a {
+  text-decoration: none;
+  color: #ff5733;
+}
+
+header nav .navbar li, header nav .navbar .dropdown, header nav .navbar .dropdown1, header nav .navbar .dropdown2 {
+  position: relative;
+  color: #ff5733;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header button {
+  color: white;
+}
+
+.rider-stats {
+  color: black;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  padding: 0.5rem;
+}
+
+.theme-toggle input {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.adventure-filters .filter-btn {
+  background: white;
+}
+
+footer .copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: white;
+}
+
+.about-intro .about-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  animation: fadeIn 1.5s ease-in-out;
+  color: gray;
+}
+
+.theme-toggle {
+  position: sticky;
+  top: 40rem;
+  right: 1rem;
+  z-index: 9999;
+  background: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 50px;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #ff5733 !important;
+  --header-bg: #2b2b2b;
+  --footer-bg: #2b2b2b;
+}/*# sourceMappingURL=theme.css.map */

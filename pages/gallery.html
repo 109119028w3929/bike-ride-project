@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/CSS/gallery.css">
+    
+    <link rel="stylesheet" href="/CSS/theme.css">
+    <script src="/JS/theme.js"></script>
+</head>
+<body>
+     <!-- Header Section -->
+    <header>
+        <div class="logo">
+          <h1>Biking Adventures</h1>
+        </div>
+        <!-- <div class="search">
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Destinations..."
+            autocomplete="off"
+          />
+          <div id="autocomplete-list"></div>
+          <button id="search-btn">Search</button>
+        </div> -->
+        <i class="fa-solid fa-bars menu-icon" id="menu-toggle"></i>
+        <nav>
+          <ul class="navbar">
+            <li class="dropdown">
+              Adventures
+              <ul class="dropdown-menu">
+                <li><a href="/pages/adventures.html">Featured Adventures</a></li>
+                <li><a href="#past-adventures">Past Adventures</a></li>
+              </ul>
+              </li>
+              <li class="dropdown1">
+                Achievements
+                <ul class="dropdown-menu1">
+                  <li><a href="/pages/achievements.html">Awards</a></li>
+                  <li><a href="#milestones">Milestones</a></li>
+                </ul>
+              </li>
+              <li class="dropdown2">
+                Gallery
+                <ul class="dropdown-menu2">
+                  <li><a href="/pages/gallery.html">Photo Gallery</a></li>
+                  <li><a href="#videos">Videos</a></li>
+                </ul>
+              </li>
+           
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <section class="gallery-section">
+        <h2>Adventure Gallery</h2>
+        <div class="photo-grid" id="photoGrid">
+          <!-- JS will append uploaded images -->
+        </div>
+    
+        <div class="upload-section">
+          <input type="file" id="photoUpload" accept="image/*">
+          <button onclick="uploadPhoto()">Upload Photo</button>
+          <button onclick="clearGallery()">Clear Gallery</button>
+
+        </div>
+        <div class="adv-video"></div>
+        <h2>Adventure Videos</h2>
+        <div class="video-gallery">
+          <div class="video-box">
+            <video controls poster="../assets/images/country side.jpg">
+              <source src="../assets/images/bike video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+        </div>
+      </section>
+    
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="https://via.placeholder.com/500" alt="Test Image">
+      </div>
+    
+     
+
+
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Subscribe to newsletter">
+            <button type="submit">Subscribe</button>
+        </form>
+        <p class="copyright">&copy; 2025 Biking Adventures | All Rights Reserved</p>
+    </div>
+    <div class="theme-toggle">
+        <label for="darkModeToggle">🌙</label>
+        <input type="checkbox" id="darkModeToggle">
+      </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+
+<script src="../JS/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Mountain Trail",
+        "image": "../assets/images/mountain adventure.jpg",
+        "description": "A breathtaking trail through the mountains with stunning views and rugged terrain.",
+        "category": "mountain",
+        "route": "Start from Hilltop Base, pass through Rocky Pass, and end at Summit Viewpoint.",
+        "story": "This journey takes you through steep climbs, winding paths, and exhilarating descents, offering the best mountain biking experience.",
+        "location": { "x": 150, "y": 200 }
+    },
+    {
+        "title": "City Ride",
+        "image": "../assets/images/mountain adventure.jpg",
+        "description": "An exciting urban biking experience through bustling streets and scenic pathways.",
+        "category": "urban",
+        "route": "Begin at Central Park, ride through Downtown Avenue, and finish at Riverside Walk.",
+        "story": "Enjoy the city vibes while navigating through vibrant streets, experiencing local culture, and stopping at hidden cafés along the way.",
+        "location": { "x": 400, "y": 200 }
+    },
+    {
+        "title": "Coastal Ride",
+        "image": "../assets/images/forest adventure.jpg",
+        "description": "A scenic ride along the coastline, feeling the breeze and admiring the ocean view.",
+        "category": "coastal",
+        "route": "Start from Sunrise Bay, follow the Ocean Drive, and reach Sunset Point.",
+        "story": "The peaceful sound of waves accompanies you as you cycle along the shoreline, making it a perfect adventure for relaxation and exploration.",
+        "location": { "x": 600, "y": 350 }
+    },
+    {
+        "title": "Forest Expedition",
+        "image": "../assets/images/forest adventure.jpg",
+        "description": "A thrilling ride through dense forests and rugged terrain, full of adventure.",
+        "category": "forest",
+        "route": "Begin at Green Trailhead, ride through Wildwood Path, and end at Echo Lake.",
+        "story": "Encounter hidden waterfalls, wildlife, and serene nature trails as you weave through the heart of the forest on this unforgettable journey.",
+        "location": { "x": 350, "y": 400 }
+    }
+]
