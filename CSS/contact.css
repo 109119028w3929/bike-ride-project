@@ -347,6 +347,7 @@ header nav .navbar li a {
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
+  resize: none;
 }
 .contact-form-section form button {
   width: 100%;

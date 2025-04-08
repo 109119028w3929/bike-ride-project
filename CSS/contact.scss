@@ -432,6 +432,7 @@ header {
         margin-bottom: 1rem;
         border: 1px solid #ccc;
         border-radius: $border-radius;
+        resize:none;//prevent resizing textbox
       }
   
       button {
