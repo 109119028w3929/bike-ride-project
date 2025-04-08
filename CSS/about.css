@@ -323,6 +323,8 @@ header nav .navbar li a {
 
 .carousel-container {
   overflow: hidden;
+  width: 100%;
+  padding: 20px;
 }
 
 .carousel {
@@ -333,17 +335,29 @@ header nav .navbar li a {
 
 .carousel-track {
   display: flex;
-  white-space: nowrap;
-  will-change: transform;
   transition: transform 0.5s ease-out;
+  will-change: transform;
 }
 
 .carousel-track img {
-  max-width: 700px;
-  margin-right: 20px;
+  width: 700px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
+@media (max-width: 1024px) {
+  .carousel-track img {
+    margin-right: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-track img {
+    margin-right: 10px;
+  }
+}
 .faq-section {
   max-width: 800px;
   margin: 50px auto;
@@ -417,7 +431,7 @@ header nav .navbar li a {
     transform: translateY(0);
   }
 }
-/* 📌 MEDIA QUERIES FOR RESPONSIVENESS */
+/*  MEDIA QUERIES FOR RESPONSIVENESS */
 /* 🔹 Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .about-intro {
@@ -432,7 +446,7 @@ header nav .navbar li a {
     max-width: 250px; /* Adjust image size */
   }
 }
-/* 🔹 Mobile (0px - 767px) */
+/*  Mobile (0px - 767px) */
 @media (max-width: 767px) {
   header {
     flex-direction: column;

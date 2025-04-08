@@ -389,33 +389,57 @@ header {
     }
 }
 
-// Gear Showcase (Carousel)
+
+//Gearshowcase carousel
+// Carousel Container
 .gear-showcase h2{
     font-size: 2.5rem;
     padding-left: 30px;
     color: $primary-color;
 }
-.carousel-container{
+.carousel-container {
     overflow: hidden;
+    width: 100%;
+    padding: 20px;
 }
+
+// Carousel Wrapper
 .carousel {
     overflow: hidden;
     width: 100%;
     position: relative;
 }
 
+// Carousel Track
 .carousel-track {
     display: flex;
-    white-space: nowrap;
-    will-change: transform;
     transition: transform 0.5s ease-out;
+    will-change: transform;
 }
 
+// Carousel Images
 .carousel-track img {
-    max-width: 700px;
-    margin-right: 20px;
+    width: 700px;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
+    flex-shrink: 0;
+    margin-right: 20px;
 }
+
+//  It Ensure spacing doesn't break layout
+@media (max-width: 1024px) {
+    .carousel-track img {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-track img {
+        margin-right: 10px;
+    }
+}
+
 
 
 // FAQ Section (Accordion)
@@ -503,7 +527,7 @@ header {
     }
 }
 
-/* 📌 MEDIA QUERIES FOR RESPONSIVENESS */
+/*  MEDIA QUERIES FOR RESPONSIVENESS */
 
 /* 🔹 Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
@@ -522,7 +546,7 @@ header {
     }
 }
 
-/* 🔹 Mobile (0px - 767px) */
+/*  Mobile (0px - 767px) */
 @media (max-width: 767px) {
     header {
         flex-direction: column;

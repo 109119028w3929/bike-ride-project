@@ -75,14 +75,18 @@ function filterAdventures(category) {
 }
 
 // Function to add interactive markers on   the SVG map
-function addMapMarkers(adventures) {
-    const map = document.getElementById("map");
+const svgMap = document.getElementById("map");
+const popup = document.getElementById("popup");
+let isMouseOverPopup = false;
+let popupTimeout = null;
 
+// Function to add interactive markers on the SVG map
+function addMapMarkers(adventures) {
     // Remove existing markers before adding new ones
     document.querySelectorAll(".marker").forEach(marker => marker.remove());
 
     adventures.forEach(adventure => {
-        let marker = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        const marker = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         marker.setAttribute("cx", adventure.location.x);
         marker.setAttribute("cy", adventure.location.y);
         marker.setAttribute("r", 10);
@@ -90,60 +94,51 @@ function addMapMarkers(adventures) {
         marker.setAttribute("data-title", adventure.title);
         marker.setAttribute("data-description", adventure.description);
 
-        // Show popup on hover
         marker.addEventListener("mouseenter", (event) => {
-            event.stopPropagation(); // Prevent bubbling
+            clearTimeout(popupTimeout);
             showPopup(event, adventure);
         });
 
         marker.addEventListener("mouseleave", () => {
-            setTimeout(() => closePopup(), 300); // Small delay before hiding
+            popupTimeout = setTimeout(() => {
+                if (!isMouseOverPopup) closePopup();
+            }, 200);
         });
 
-        // Click to highlight the selected adventure
         marker.addEventListener("click", () => {
             document.querySelectorAll(".marker").forEach(m => m.classList.remove("active"));
             marker.classList.add("active");
         });
 
-        map.appendChild(marker);
+        svgMap.appendChild(marker);
     });
 }
 
-// Function to show popup near the marker
+// Show popup near the marker
 function showPopup(event, adventure) {
-    const popup = document.getElementById("popup");
-
-    // Prevent unnecessary re-renders
-    if (popup.style.display === "block") return; 
+    popup.style.left = `${event.pageX + 15}px`;
+    popup.style.top = `${event.pageY - 30}px`;
     popup.style.display = "block";
-
-    // Adjust position dynamically
-    popup.style.left = `${event.pageX + 15}px`; 
-popup.style.top = `${event.pageY - 30}px`;
-
-
     document.getElementById("popup-title").textContent = adventure.title;
     document.getElementById("popup-description").textContent = adventure.description;
-    // Prevent flickering by adding a hover event to the popup itself
-    popup.addEventListener("mouseenter", () => {
-        popup.style.display = "block";
-    });
-
-    popup.addEventListener("mouseleave", closePopup);
 }
 
-// Function to close popup
+// Close the popup
 function closePopup() {
-    setTimeout(() => {
-        const popup = document.getElementById("popup");
-
-        // Only hide if the mouse is NOT over the popup
-        if (!popup.matches(":hover")) {
-            popup.style.display = "none";
-        }
-    }, 200); //  a short delay to prevent immediate flickering
+    popup.style.display = "none";
 }
+
+// Hover state tracking
+popup.addEventListener("mouseenter", () => {
+    isMouseOverPopup = true;
+    clearTimeout(popupTimeout);
+});
+
+popup.addEventListener("mouseleave", () => {
+    isMouseOverPopup = false;
+    popupTimeout = setTimeout(() => closePopup(), 200);
+});
+
 
 
 // Search Functionality with Keyword Highlighting
@@ -156,7 +151,7 @@ function setupSearch() {
         let matchCount = 0;
 
         document.querySelectorAll(".card").forEach(card => {
-            let titleElement = card.querySelector(".title");
+            let titleElement = card.querySelector(".title")
             let titleText = titleElement.textContent;
 
             if (titleText.toLowerCase().includes(searchValue)) {
@@ -207,14 +202,19 @@ function renderWaypoints() {
   localStorage.setItem("bikeWaypoints", JSON.stringify(waypoints));
 }
 
-// Handle click to add waypoint
+// Handle click to add waypoint  
+
 map.addEventListener("click", function (e) {
-  const rect = map.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  waypoints.push({ x: Math.round(x), y: Math.round(y) });
-  renderWaypoints();
-});
+    const pt = map.createSVGPoint();
+    pt.x = e.clientX;
+    pt.y = e.clientY;
+  
+    const svgP = pt.matrixTransform(map.getScreenCTM().inverse());
+  
+    waypoints.push({ x: Math.round(svgP.x), y: Math.round(svgP.y) });
+    renderWaypoints();
+  });
+  
 
 // Clear route
 document.getElementById("clear-route").addEventListener("click", () => {
