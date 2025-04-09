@@ -130,7 +130,7 @@ header {
                 box-shadow: 0 4px 8px rgba(70, 53, 53, 0.2);
                 padding: 10px;
                 min-width: 150px;
-                z-index: 9999; //  Fix dropdown behind navbar issue
+                z-index: 9999; //  dropdown behind navbar issue
                 border:2px solid $primary-color;
                
   
@@ -288,7 +288,7 @@ header {
                   display: none;
                   position: absolute;
                   left: 50%;
-                  transform: translateX(-50%); // Center align the dropdown
+                  transform: translateX(-50%); //  Center align the dropdown
                   top: 100%;
                   background: white;
                   border-radius: 5px;
@@ -327,7 +327,7 @@ header {
                 display: none;
                 position: absolute;
                 left: 50%;
-                transform: translateX(-50%); //  Center align the dropdown
+                transform: translateX(-50%); // Center align the dropdown
                 top: 100%;
                 background: white;
                 border-radius: 5px;
@@ -361,6 +361,8 @@ header {
         display: flex;
     }
   }
+
+
 
 
 // About Section (Two-Column Layout)
@@ -552,7 +554,7 @@ header {
 /*  Mobile (0px - 767px) */
 @media (max-width: 767px) {
     header {
-        flex-direction: column;
+        // flex-direction: column;
         text-align: center;
     }
 

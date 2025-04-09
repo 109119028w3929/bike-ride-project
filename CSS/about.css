@@ -451,7 +451,6 @@ header nav .navbar li a {
 /*  Mobile (0px - 767px) */
 @media (max-width: 767px) {
   header {
-    flex-direction: column;
     text-align: center;
   }
   nav ul {
