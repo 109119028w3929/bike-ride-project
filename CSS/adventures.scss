@@ -505,21 +505,24 @@ header {
   
 
 //  Map Section
-.map-container {
-    @include flex-center();
-    margin-top: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    .map-container {
+        @include flex-center();
+        margin-top: 30px;
+        max-width: 850px;
+        margin:auto;
+        background: white;
+        padding: 0px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
-    #map {
-        width: 800px;
-        height: 500px;
-        background: #e0e0e0;
-        border: 2px solid black;
+        #map {
+            width: 100%;
+            height: auto;
+            background: #e0e0e0;
+            border: 2px solid black;
+        }
     }
-}
+
 
 // SVG Markers
 .marker {

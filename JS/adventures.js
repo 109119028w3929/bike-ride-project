@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
             displayAdventures(data);  
             addMapMarkers(data);      
 
-            setupFilters();           // Call filters *after* loading data
-            setupSearch();            //  Call search *after* loading data
+            setupFilters();           // Call filters after loading data
+            setupSearch();            //  Call search after loading data
         })
     
 
@@ -80,64 +80,70 @@ const popup = document.getElementById("popup");
 let isMouseOverPopup = false;
 let popupTimeout = null;
 
-// Function to add interactive markers on the SVG map
+// Add dynamic markers to the SVG map
 function addMapMarkers(adventures) {
-    // Remove existing markers before adding new ones
-    document.querySelectorAll(".marker").forEach(marker => marker.remove());
+  // Remove all existing markers first
+  document.querySelectorAll(".marker").forEach(marker => marker.remove());
 
-    adventures.forEach(adventure => {
-        const marker = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        marker.setAttribute("cx", adventure.location.x);
-        marker.setAttribute("cy", adventure.location.y);
-        marker.setAttribute("r", 10);
-        marker.setAttribute("class", "marker");
-        marker.setAttribute("data-title", adventure.title);
-        marker.setAttribute("data-description", adventure.description);
+  adventures.forEach(adventure => {
+    // Create an SVG circle for each adventure
+    const marker = document.createElementNS("http://www.w3.org/2000/svg", "circle");//document.createElementNS() is like createElement()  but for SVG elements, which require a namespace
+    marker.setAttribute("cx", adventure.location.x);
+    marker.setAttribute("cy", adventure.location.y);
+    marker.setAttribute("r", 10);
+    marker.setAttribute("class", "marker"); // This is key for styling + removal
+    marker.setAttribute("data-title", adventure.title);
+    marker.setAttribute("data-description", adventure.description);
 
-        marker.addEventListener("mouseenter", (event) => {
-            clearTimeout(popupTimeout);
-            showPopup(event, adventure);
-        });
-
-        marker.addEventListener("mouseleave", () => {
-            popupTimeout = setTimeout(() => {
-                if (!isMouseOverPopup) closePopup();
-            }, 200);
-        });
-
-        marker.addEventListener("click", () => {
-            document.querySelectorAll(".marker").forEach(m => m.classList.remove("active"));
-            marker.classList.add("active");
-        });
-
-        svgMap.appendChild(marker);
+    // Show popup on hover
+    marker.addEventListener("mouseenter", (event) => {
+      clearTimeout(popupTimeout);
+      showPopup(event, adventure);
     });
+
+    // Hide popup after delay on mouse leave
+    marker.addEventListener("mouseleave", () => {
+      popupTimeout = setTimeout(() => {
+        if (!isMouseOverPopup) closePopup();
+      }, 200);
+    });
+
+    // Highlight the clicked marker
+    marker.addEventListener("click", () => {
+      document.querySelectorAll(".marker").forEach(m => m.classList.remove("active"));//only one marker will be active
+      marker.classList.add("active");
+    });
+
+    // Add marker to the SVG
+    svgMap.appendChild(marker);
+  });
 }
 
-// Show popup near the marker
+// Display popup near the marker
 function showPopup(event, adventure) {
-    popup.style.left = `${event.pageX + 15}px`;
-    popup.style.top = `${event.pageY - 30}px`;
-    popup.style.display = "block";
-    document.getElementById("popup-title").textContent = adventure.title;
-    document.getElementById("popup-description").textContent = adventure.description;
+  popup.style.left = `${event.pageX + 15}px`;
+  popup.style.top = `${event.pageY - 30}px`;
+  popup.style.display = "block";
+  document.getElementById("popup-title").textContent = adventure.title;
+  document.getElementById("popup-description").textContent = adventure.description;
 }
 
-// Close the popup
+// Hide the popup
 function closePopup() {
-    popup.style.display = "none";
+  popup.style.display = "none";
 }
 
-// Hover state tracking
+// Keep popup open when hovering over it
 popup.addEventListener("mouseenter", () => {
-    isMouseOverPopup = true;
-    clearTimeout(popupTimeout);
+  isMouseOverPopup = true;
+  clearTimeout(popupTimeout);
 });
 
 popup.addEventListener("mouseleave", () => {
-    isMouseOverPopup = false;
-    popupTimeout = setTimeout(() => closePopup(), 200);
+  isMouseOverPopup = false;
+  popupTimeout = setTimeout(() => closePopup(), 200);
 });
+
 
 
 
@@ -160,7 +166,7 @@ function setupSearch() {
 
                 // Highlight matched text
                 let regex = new RegExp(`(${searchValue})`, "gi");
-                titleElement.innerHTML = titleText.replace(regex, `<span class="highlight">$1</span>`);
+                titleElement.innerHTML = titleText.replace(regex, `<span class="highlight">$1</span>`);// $1 means whatever was matched inside the group of regex
             } else {
                 card.style.display = "none";
                 titleElement.innerHTML = titleText; // Reset if no match
@@ -179,7 +185,7 @@ function setupSearch() {
 // Route Planner Script
 const map = document.getElementById("custom-map");
 const waypointList = document.getElementById("waypoint-list");
-let waypoints = JSON.parse(localStorage.getItem("bikeWaypoints")) || [];
+let waypoints = JSON.parse(localStorage.getItem("bikeWaypoints")) || [];//it l0ds previous saved waypoints or an empty arry
 
 function renderWaypoints() {
   // Clear old points
