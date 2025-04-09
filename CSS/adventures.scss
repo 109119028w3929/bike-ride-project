@@ -533,7 +533,7 @@ header {
     @include transition(transform 0.2s ease-in-out);
 
     &:hover {
-        transform: scale(1.3);
+        // transform: scale(0.1);
         fill: blue;
     }
 
@@ -567,6 +567,7 @@ header {
 
 //route planner
 #route-planner {
+    // @include flex-center( )
     margin: 3rem auto;
     max-width: 850px;
     padding: 1rem;
@@ -593,6 +594,11 @@ header {
       border-radius: 8px;
       background-color: $background-color;
       cursor: crosshair;
+    //   object-fit: cover;
+
+    img{
+        object-fit: cover;
+    }
   
       .waypoint {
         fill: #3498db;
@@ -691,7 +697,7 @@ header {
   
     .tips-grid {
       display: grid;
-      gap: 1.5rem;
+      gap: 2.5rem;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       perspective: 1000px;
     }
@@ -703,6 +709,8 @@ header {
         transform-style: preserve-3d;
         transition: transform 0.8s ease;
         cursor: pointer;
+        // padding: 10px;
+        
       
         &:hover {
           transform: rotateY(180deg);
@@ -713,7 +721,7 @@ header {
           position: absolute;
           width: 100%;
           height: 100%;
-          padding: 1rem; // reduced padding
+        //   padding: 1rem; // reduced padding
           border-radius: 10px;
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
           backface-visibility: hidden;
@@ -745,6 +753,8 @@ header {
         }
       }
     }
+
+  
       
   
   

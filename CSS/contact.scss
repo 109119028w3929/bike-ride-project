@@ -95,6 +95,7 @@ header {
       background-color: $primary-color;
       border-radius: 15px;
       cursor: pointer;
+      border: none;
     }
   
     .menu-icon {
@@ -187,6 +188,7 @@ header {
     #menu-toggle{
       padding: 5px;
       color: $primary-color;
+      background-color: $bg-color;
     }
   
     .search {

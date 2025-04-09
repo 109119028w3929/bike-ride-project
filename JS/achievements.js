@@ -172,3 +172,158 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+
+
+//2
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // 🔹 Timeline Animation
+//   const timelineItems = document.querySelectorAll(".timeline-item");
+
+//   const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting && !entry.target.classList.contains("visible")) {
+//         entry.target.classList.add("visible");
+//       }
+//     });
+//   }, {
+//     threshold: 0.3,
+//     rootMargin: "0px 0px -50px 0px"
+//   });
+
+//   timelineItems.forEach(item => observer.observe(item));
+
+//   // 🔹 Awards Animation
+//   const awards = document.querySelectorAll(".award");
+
+//   const awardsObserver = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("active");
+//       }
+//     });
+//   }, {
+//     threshold: 0.3
+//   });
+
+//   awards.forEach(award => awardsObserver.observe(award));
+
+//   // 🔹 Fill Progress Bars
+//   const progressBars = document.querySelectorAll(".progress-bar-fill");
+
+//   function fillProgressBars() {
+//     progressBars.forEach(bar => {
+//       const percentage = bar.getAttribute("data-progress");
+//       bar.style.width = percentage + "%";
+//     });
+//   }
+
+//   // 🔹 Animate Stats
+//   function animateStat(id, target) {
+//     let count = 0;
+//     let speed = 50;
+
+//     const interval = setInterval(() => {
+//       if (count < target) {
+//         count++;
+//         document.getElementById(id).innerText = count;
+//       } else {
+//         clearInterval(interval);
+//       }
+//     }, speed);
+//   }
+
+//   // Trigger animations after full window load
+//   window.onload = function () {
+//     fillProgressBars();
+//     animateStat("longestRide", 500);
+//     animateStat("fastestSpeed", 120);
+//     animateStat("highestElevation", 4500);
+//   };
+
+//   // 🔹 Bike Quiz
+//   const questions = [
+//     {
+//       question: "How often do you go on bike rides?",
+//       options: ["Daily", "Weekends", "Occasionally", "Rarely"],
+//       answer: "Daily"
+//     },
+//     {
+//       question: "What's your preferred terrain?",
+//       options: ["Mountains", "City Roads", "Trails", "Beachside"],
+//       answer: "Trails"
+//     },
+//     {
+//       question: "How do you prepare for a ride?",
+//       options: ["Check tires", "Pack tools", "Hydrate", "All of the above"],
+//       answer: "All of the above"
+//     }
+//   ];
+
+//   const quizContainer = document.getElementById("quiz-container");
+//   const resultBox = document.getElementById("quiz-result");
+//   let score = 0;
+
+//   questions.forEach((q, index) => {
+//     const qDiv = document.createElement("div");
+//     qDiv.classList.add("question");
+
+//     const qText = document.createElement("h3");
+//     qText.textContent = `${index + 1}. ${q.question}`;
+//     qDiv.appendChild(qText);
+
+//     q.options.forEach(opt => {
+//       const optBtn = document.createElement("div");
+//       optBtn.classList.add("option");
+//       optBtn.textContent = opt;
+
+//       optBtn.addEventListener("click", () => {
+//         if (opt === q.answer) {
+//           optBtn.classList.add("correct");
+//           score++;
+//         } else {
+//           optBtn.classList.add("wrong");
+//         }
+
+//         qDiv.querySelectorAll(".option").forEach(btn => {
+//           btn.style.pointerEvents = "none";
+//           if (btn.textContent === q.answer) {
+//             btn.classList.add("correct");
+//           }
+//         });
+
+//         if (index === questions.length - 1) {
+//           setTimeout(() => {
+//             resultBox.classList.remove("hidden");
+//             resultBox.textContent = `🎉 You scored ${score} out of ${questions.length}!`;
+//           }, 1000);
+//         }
+//       });
+
+//       qDiv.appendChild(optBtn);
+//     });
+
+//     quizContainer.appendChild(qDiv);
+//   });
+
+//   // 🔹 Mobile Menu Toggle
+//   const menuToggle = document.getElementById("menu-toggle");
+//   const nav = document.querySelector("nav");
+
+//   if (menuToggle && nav) {
+//     menuToggle.addEventListener("click", () => {
+//       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+//       menuToggle.setAttribute("aria-expanded", !isExpanded);
+//       nav.classList.toggle("active");
+//       console.log("working");
+//     });
+
+//     nav.querySelectorAll("a").forEach(link => {
+//       link.addEventListener("click", () => {
+//         nav.classList.remove("active");
+//         menuToggle.setAttribute("aria-expanded", "false");
+//       });
+//     });
+//   }
+// });

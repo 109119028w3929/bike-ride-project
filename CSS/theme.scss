@@ -107,3 +107,12 @@ footer .copyright {
   opacity: 0.8;
   color: #d4411e ;
 }
+
+@media (max-width: 768px) {  //this is for pages from achievement till contact used button as menu toggle
+  .dark-mode #menu-toggle {
+      padding: 5px;
+      color: #ff5733;
+      background-color: #2b2b2b !important;
+  }
+}
+

@@ -71,6 +71,7 @@ header button {
   background-color: #ff5733;
   border-radius: 15px;
   cursor: pointer;
+  border: none;
 }
 header .menu-icon {
   display: none;
@@ -143,6 +144,7 @@ header nav .navbar li a {
   #menu-toggle {
     padding: 5px;
     color: #ff5733;
+    background-color: #f9f9f9;
   }
   .search {
     position: relative;
